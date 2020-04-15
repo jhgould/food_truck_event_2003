@@ -28,5 +28,37 @@ class Event
     trucks
   end
 
+  # went down the wrong path. If the test didnt take so long to
+  #set up I would have been able to take more time and thing through this 
+  def total_inventory
+    list = Hash.new([])
+    @food_trucks.each do |truck|
+      truck.inventory.each do |item|
+        list[item[0].name] = []
+      end
+    end
+    list.each do |k, v|
+      @food_trucks.each do |truck|
+        truck.inventory.each do |item|
+          if item[0].name == k
+            list[k] << truck
+          end
+        end
+      end
+    end
+    list
+  end
+
+
+  def sorted_item_list
+    list = []
+    @food_trucks.each do |truck|
+      truck.inventory.each do |item|
+        list << item[0].name
+      end
+    end
+    list.uniq.sort
+  end
+
 
 end
