@@ -28,8 +28,11 @@ class Event
     trucks
   end
 
-  # went down the wrong path. If the test didnt take so long to
-  #set up I would have been able to take more time and thing through this 
+  # went down the wrong path. I know this is not the way to do it.
+  #I committed to this idea and by the time if realized it was very wrong
+  #I spent so much time on it I couldnt just stop. If I had more time id nuke it
+  #but not worth doing that now. At least this shows how far I got.
+  #returns a list off all food trucks that sell that item but not quantity
   def total_inventory
     list = Hash.new([])
     @food_trucks.each do |truck|
